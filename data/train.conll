@@ -1,0 +1,62 @@
+# text = Ayşe dün markete gitti. O bir ekmek aldı.
+# columns = ID FORM COREF
+1	Ayşe	(1)
+2	dün	_
+3	markete	_
+4	gitti	_
+5	.	_
+6	O	(1)
+7	bir	_
+8	ekmek	(2)
+9	aldı	_
+10	.	_
+
+# text = Mehmet kitabı okudu. Onu çok beğendi.
+# columns = ID FORM COREF
+1	Mehmet	(3)
+2	kitabı	(4)
+3	okudu	_
+4	.	_
+5	Onu	(4)
+6	çok	_
+7	beğendi	_
+8	.	_
+
+# text = Fatma ve Ali sinemaya gitti. Fatma filmi beğendi ama Ali sıkıldı.
+# columns = ID FORM COREF
+1	Fatma	(5)
+2	ve	_
+3	Ali	(6)
+4	sinemaya	_
+5	gitti	_
+6	.	_
+7	Fatma	(5)
+8	filmi	(7)
+9	beğendi	_
+10	ama	_
+11	Ali	(6)
+12	sıkıldı	_
+13	.	_
+
+# text = Hoca öğrencilere ödev verdi. Onlar ödevi bitirdi.
+# columns = ID FORM COREF
+1	Hoca	(8)
+2	öğrencilere	(9)
+3	ödev	(10)
+4	verdi	_
+5	.	_
+6	Onlar	(9)
+7	ödevi	(10)
+8	bitirdi	_
+9	.	_
+
+# text = Araba garajda duruyordu. Sürücü onu çalıştırdı.
+# columns = ID FORM COREF
+1	Araba	(11)
+2	garajda	_
+3	duruyordu	_
+4	.	_
+5	Sürücü	(12)
+6	onu	(11)
+7	çalıştırdı	_
+8	.	_

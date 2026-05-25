@@ -1,0 +1,22 @@
+# text = Ahmet kitabı raftan aldı. O okumaya başladı.
+# columns = ID FORM COREF
+1	Ahmet	(1)
+2	kitabı	(2)
+3	raftan	_
+4	aldı	_
+5	.	_
+6	O	(1)
+7	okumaya	_
+8	başladı	_
+9	.	_
+
+# text = Kedi bahçede uyuyordu. Köpek onu gördü.
+# columns = ID FORM COREF
+1	Kedi	(3)
+2	bahçede	_
+3	uyuyordu	_
+4	.	_
+5	Köpek	(4)
+6	onu	(3)
+7	gördü	_
+8	.	_
