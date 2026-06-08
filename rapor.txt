@@ -1,0 +1,246 @@
+Aşağıda raporu **makale formatına yakın, akademik üslupta, daha resmi ve detaylı** şekilde yeniden yazdım. Direkt Word/PDF’e koyabilirsin.
+
+---
+
+# 📄 Türkçe Metinlerde İstatistiksel Makine Öğrenmesi ile Coreference Resolution
+
+## (Makale Formatında Teknik Rapor)
+
+---
+
+## Özet
+
+Bu çalışmada Türkçe metinlerde geçen varlıklar arasındaki gönderim (coreference) ilişkilerinin otomatik olarak tespit edilmesi amacıyla istatistiksel makine öğrenmesi tabanlı bir sistem geliştirilmiştir. Problem, ikili sınıflandırma (pairwise classification) yaklaşımıyla ele alınmış ve Logistic Regression modeli kullanılmıştır. Sistem CoNLL formatında etiketlenmiş veri üzerinde eğitilmiş ve test edilmiştir. Elde edilen sonuçlar, modelin çoğunluk sınıfını başarılı şekilde öğrendiğini ancak azınlık sınıfı olan coreference ilişkilerinde düşük performans gösterdiğini ortaya koymuştur. Bu durumun temel nedeni veri dengesizliği ve sınırlı özellik temsili olarak analiz edilmiştir.
+
+---
+
+## 1. Giriş
+
+Coreference resolution, doğal dil işlemenin (NLP) temel problemlerinden biri olup, metin içerisindeki farklı ifade biçimlerinin aynı varlığa referans verip vermediğini belirlemeyi amaçlar. Örneğin:
+
+> “Ahmet kitabı aldı. O okumaya başladı.”
+
+cümlesinde “O” zamiri “Ahmet”e referans vermektedir.
+
+Bu problem bilgi çıkarımı, metin anlama ve soru cevaplama sistemleri için kritik öneme sahiptir. Ancak özellikle Türkçe gibi eklemeli dillerde, morfolojik çeşitlilik ve bağlam bağımlılığı nedeniyle çözümleme daha zordur.
+
+---
+
+## 2. Problem Tanımı
+
+Bu çalışmada problem şu şekilde formalize edilmiştir:
+
+Verilen bir metinde bulunan her iki kelime çifti için:
+
+> “Bu iki ifade aynı varlığa mı referans vermektedir?”
+
+sorusu ikili sınıflandırma problemi olarak modellenmiştir.
+
+Çıktı:
+
+* 1 → coreference var
+* 0 → coreference yok
+
+---
+
+## 3. Veri ve CoNLL Formatı
+
+Çalışmada CoNLL formatında etiketlenmiş veri kullanılmıştır. Her token şu şekilde temsil edilmiştir:
+
+```
+token_id   kelime   cluster_label
+```
+
+Örnek:
+
+```
+1   Ahmet   B-1
+2   kitabı  I-1
+3   raftan  O
+```
+
+Burada:
+
+* **B-X**: cluster başlangıcı
+* **I-X**: cluster devamı
+* **O**: herhangi bir referans ilişkisi yok
+
+Veri seti:
+
+* Eğitim: 2045 örnek
+* Test: 680 örnek
+
+---
+
+## 4. Yöntem
+
+### 4.1 Pairwise Modelleme
+
+Coreference problemi çiftli örnekleme (pairwise classification) ile modellenmiştir. Her dokümandaki tüm kelime çiftleri oluşturulmuş ve model bu çiftlerin coreferential olup olmadığını öğrenmiştir.
+
+Matematiksel olarak:
+
+[
+f(w_i, w_j) \rightarrow {0,1}
+]
+
+---
+
+### 4.2 Özellik Çıkarımı
+
+Her kelime çifti için aşağıdaki yüzeysel (surface-level) özellikler kullanılmıştır:
+
+1. **Case-insensitive equality**
+   [
+   w_i = w_j
+   ]
+
+2. **Capitalization similarity**
+   [
+   Capital(w_i) \land Capital(w_j)
+   ]
+
+3. **Substring similarity**
+   [
+   w_i \subset w_j \lor w_j \subset w_i
+   ]
+
+Bu özellikler yalnızca yüzeysel benzerliği yakalayabilmektedir.
+
+---
+
+### 4.3 Model
+
+Model olarak Logistic Regression kullanılmıştır.
+
+* max_iter = 1000
+* class_weight = balanced
+
+Bu seçim, veri setindeki sınıf dengesizliğini azaltmayı amaçlamaktadır.
+
+---
+
+### 4.4 Kümeleme (Clustering)
+
+Model çıktıları kullanılarak coreference zincirleri oluşturulmuştur. Bunun için Union-Find (Disjoint Set) algoritması kullanılmıştır.
+
+Eğer iki ifade arasında coreference olasılığı:
+
+[
+P(y=1|w_i,w_j) > 0.5
+]
+
+ise bu iki ifade aynı kümeye dahil edilmiştir.
+
+---
+
+### 4.5 BIO Etiketleme
+
+Oluşturulan kümeler CoNLL formatına şu şekilde dönüştürülmüştür:
+
+* İlk eleman: **B-X**
+* Devam eden elemanlar: **I-X**
+* Küme dışı: **O**
+
+---
+
+## 5. Deneysel Sonuçlar
+
+### 5.1 Performans Metrikleri
+
+Model aşağıdaki sonuçları üretmiştir:
+
+| Metric            | Value |
+| ----------------- | ----- |
+| Accuracy          | 0.942 |
+| Precision (coref) | 0.16  |
+| Recall (coref)    | 0.18  |
+| F1-score          | 0.17  |
+
+---
+
+### 5.2 Confusion Matrix
+
+[
+\begin{bmatrix}
+637 & 21 \
+18 & 4
+\end{bmatrix}
+]
+
+---
+
+## 6. Sonuçların Analizi
+
+Elde edilen sonuçlar incelendiğinde modelin yüksek accuracy değerine rağmen coreference sınıfında düşük performans gösterdiği görülmektedir. Bunun temel nedenleri aşağıda açıklanmıştır:
+
+### 6.1 Veri Dengesizliği
+
+Veri dağılımı:
+
+* Non-coreference (0): 658 örnek
+* Coreference (1): 22 örnek
+
+Bu ciddi dengesizlik, modelin çoğunluk sınıfına yönelmesine neden olmuştur.
+
+---
+
+### 6.2 Özellik Yetersizliği
+
+Kullanılan özellikler yalnızca yüzeysel benzerliğe dayalıdır. Semantic (anlamsal) bilgi içermemektedir.
+
+Eksik kalan bilgiler:
+
+* Word embeddings
+* Context window
+* Sentence-level representation
+
+---
+
+### 6.3 Model Sınırlılığı
+
+Logistic Regression doğrusal bir modeldir ve karmaşık dil ilişkilerini modelleme kapasitesi sınırlıdır.
+
+---
+### 6.4 Baseline Değerlendirmesi
+Elde edilen F1 = 0.17 değeri ilk bakışta düşük görünse de bu sonuç, sistemin bir baseline (temel seviye) model olduğu göz önünde bulundurulduğunda beklenen bir aralıktadır. Coreference resolution, doğal dil işlemenin en zorlu problemlerinden biri olup modern derin öğrenme tabanlı sistemler bile bu görevde sınırlı başarı sergilemektedir. Nitekim BERT ve türevi büyük dil modelleri kullanılarak geliştirilen İngilizce sistemler OntoNotes veri setinde F1 ≈ 0.80 civarında sonuçlar üretirken, Türkçe için kaynak kısıtlılığı nedeniyle bu değerler çok daha düşük kalmaktadır. Türkçe'nin eklemeli yapısı, zengin morfolojisi ve serbest sözdizimi, yüzeysel özelliğe dayalı modellerin zamir çözümleme ve zincir oluşturma görevlerinde yetersiz kalmasına doğrudan yol açmaktadır.Bu çalışmada kullanılan yalnızca 3 yüzeysel özellik (büyük harf benzerliği, eşitlik, alt dizi içerme) ile kurulan model, semantik ilişkileri modelleyememektedir. Örneğin "Ahmet" ile "O" arasındaki coreference ilişkisi ancak bağlamsal temsil (contextual embedding) ile yakalanabilir; bu iki token yüzey biçimi itibarıyla hiçbir benzerlik taşımamaktadır. Dolayısıyla modelin bu tür zamir-isim çiftlerinde başarısız olması kaçınılmazdır.Sonuç olarak bu sistem, Türkçe coreference resolution için geliştirilmiş ilk aşama, yorumlanabilir ve uçtan uca çalışan bir referans noktası sunmaktadır. Daha yüksek performans elde etmek için BERT tabanlı bağlamsal temsiller, CRF katmanı ve daha büyük etiketli veri setlerinin kullanılması gerekmektedir.
+
+## 7. Tartışma
+
+Bu çalışma bir baseline (temel seviye) coreference resolution sistemi olarak değerlendirilebilir. Sistem uçtan uca çalışmakta ve CoNLL formatında çıktı üretebilmektedir. Ancak performans sınırlıdır.
+
+Modern yaklaşımlar ile karşılaştırıldığında bu sistem:
+
+* Semantic awareness içermez
+* Deep learning tabanlı değildir
+* Global entity modeling yapmaz
+
+---
+
+## 8. Gelecek Çalışmalar
+
+Performansın artırılması için aşağıdaki geliştirmeler önerilmektedir:
+
+### 8.1 BERT tabanlı embedding
+
+* Contextual representation sağlar
+* Zamir çözümleme gücünü artırır
+
+### 8.2 CRF / Sequence labeling
+
+* BIO tagging doğrudan öğrenilebilir
+
+### 8.3 Span-based coreference models
+
+* Modern SOTA yaklaşım
+
+### 8.4 Veri artırımı
+
+* Daha fazla coreference örneği
+* Zamir ağırlıklı dataset
+
+---
+
+## 9. Sonuç
+
+Bu çalışmada Türkçe metinlerde coreference resolution problemi istatistiksel makine öğrenmesi yaklaşımı ile ele alınmıştır. Logistic Regression tabanlı model ile çalışan bir sistem geliştirilmiş ve CoNLL formatında çıktı üretilmiştir. Her ne kadar sistem temel seviyede başarılı olsa da, semantic bilgi eksikliği ve veri dengesizliği nedeniyle coreference tespit performansı sınırlı kalmıştır.

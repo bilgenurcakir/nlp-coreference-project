@@ -60,3 +60,658 @@
 6	onu	(11)
 7	çalıştırdı	_
 8	.	_
+
+# text = Zeynep arkadaşına hediye aldı. Ona çok sevindirdi.
+# columns = ID FORM COREF
+1	Zeynep	(13)
+2	arkadaşına	(14)
+3	hediye	(15)
+4	aldı	_
+5	.	_
+6	Ona	(14)
+7	çok	_
+8	sevindirdi	_
+9	.	_
+
+# text = Çocuklar parkta oynadı. Onlar çok eğlendi.
+# columns = ID FORM COREF
+1	Çocuklar	(16)
+2	parkta	_
+3	oynadı	_
+4	.	_
+5	Onlar	(16)
+6	çok	_
+7	eğlendi	_
+8	.	_
+
+# text = Doktor hastayı muayene etti. Ona ilaç yazdı.
+# columns = ID FORM COREF
+1	Doktor	(17)
+2	hastayı	(18)
+3	muayene	_
+4	etti	_
+5	.	_
+6	Ona	(18)
+7	ilaç	(19)
+8	yazdı	_
+9	.	_
+
+# text = Köpek kemik buldu. Onu hemen yedi.
+# columns = ID FORM COREF
+1	Köpek	(20)
+2	kemik	(21)
+3	buldu	_
+4	.	_
+5	Onu	(21)
+6	hemen	_
+7	yedi	_
+8	.	_
+
+# text = Öğretmen tahtaya yazdı. Öğrenciler onu defterlerine geçirdi.
+# columns = ID FORM COREF
+1	Öğretmen	(22)
+2	tahtaya	_
+3	yazdı	_
+4	.	_
+5	Öğrenciler	(23)
+6	onu	(22)
+7	defterlerine	_
+8	geçirdi	_
+9	.	_
+
+# text = Emre bisikletini tamire verdi. Onu iki gün sonra aldı.
+# columns = ID FORM COREF
+1	Emre	(24)
+2	bisikletini	(25)
+3	tamire	_
+4	verdi	_
+5	.	_
+6	Onu	(25)
+7	iki	_
+8	gün	_
+9	sonra	_
+10	aldı	_
+11	.	_
+
+# text = Kız kardeşim pasta yaptı. Onu komşulara dağıttı.
+# columns = ID FORM COREF
+1	Kız	_
+2	kardeşim	(26)
+3	pasta	(27)
+4	yaptı	_
+5	.	_
+6	Onu	(27)
+7	komşulara	(28)
+8	dağıttı	_
+9	.	_
+
+# text = Müdür toplantı düzenledi. Herkes ona katıldı.
+# columns = ID FORM COREF
+1	Müdür	(29)
+2	toplantı	(30)
+3	düzenledi	_
+4	.	_
+5	Herkes	_
+6	ona	(30)
+7	katıldı	_
+8	.	_
+
+# text = Kedi fareyi yakaladı. Onu oyuncak gibi kullandı.
+# columns = ID FORM COREF
+1	Kedi	(31)
+2	fareyi	(32)
+3	yakaladı	_
+4	.	_
+5	Onu	(32)
+6	oyuncak	_
+7	gibi	_
+8	kullandı	_
+9	.	_
+
+# text = Annem çorba pişirdi. Onu sofraya koydu.
+# columns = ID FORM COREF
+1	Annem	(33)
+2	çorba	(34)
+3	pişirdi	_
+4	.	_
+5	Onu	(34)
+6	sofraya	_
+7	koydu	_
+8	.	_
+
+# text = Belediye yeni park açtı. Çocuklar ona akın etti.
+# columns = ID FORM COREF
+1	Belediye	(35)
+2	yeni	_
+3	park	(36)
+4	açtı	_
+5	.	_
+6	Çocuklar	(37)
+7	ona	(36)
+8	akın	_
+9	etti	_
+10	.	_
+
+# text = Ali arabasını yıkadı. Onu garaj önüne park etti.
+# columns = ID FORM COREF
+1	Ali	(38)
+2	arabasını	(39)
+3	yıkadı	_
+4	.	_
+5	Onu	(39)
+6	garaj	_
+7	önüne	_
+8	park	_
+9	etti	_
+10	.	_
+
+# text = Yazar roman bitirdi. Onu yayınevine gönderdi.
+# columns = ID FORM COREF
+1	Yazar	(40)
+2	roman	(41)
+3	bitirdi	_
+4	.	_
+5	Onu	(41)
+6	yayınevine	(42)
+7	gönderdi	_
+8	.	_
+
+# text = Turist fotoğraf çekti. Onları sosyal medyada paylaştı.
+# columns = ID FORM COREF
+1	Turist	(43)
+2	fotoğraf	(44)
+3	çekti	_
+4	.	_
+5	Onları	(44)
+6	sosyal	_
+7	medyada	_
+8	paylaştı	_
+9	.	_
+
+# text = Çiftçi tarlasını ekti. Onu gübreyle besledi.
+# columns = ID FORM COREF
+1	Çiftçi	(45)
+2	tarlasını	(46)
+3	ekti	_
+4	.	_
+5	Onu	(46)
+6	gübreyle	_
+7	besledi	_
+8	.	_
+
+# text = Mühendis projeyi teslim etti. Ekibi onu kutladı.
+# columns = ID FORM COREF
+1	Mühendis	(47)
+2	projeyi	(48)
+3	teslim	_
+4	etti	_
+5	.	_
+6	Ekibi	(49)
+7	onu	(47)
+8	kutladı	_
+9	.	_
+
+# text = Öğrenci sınavı kazandı. Ailesi onunla gurur duydu.
+# columns = ID FORM COREF
+1	Öğrenci	(50)
+2	sınavı	(51)
+3	kazandı	_
+4	.	_
+5	Ailesi	(52)
+6	onunla	(50)
+7	gurur	_
+8	duydu	_
+9	.	_
+
+# text = Garson siparişi aldı. Onu mutfağa iletti.
+# columns = ID FORM COREF
+1	Garson	(53)
+2	siparişi	(54)
+3	aldı	_
+4	.	_
+5	Onu	(54)
+6	mutfağa	_
+7	iletti	_
+8	.	_
+
+# text = Bakan yasayı imzaladı. Onu yürürlüğe koydu.
+# columns = ID FORM COREF
+1	Bakan	(55)
+2	yasayı	(56)
+3	imzaladı	_
+4	.	_
+5	Onu	(56)
+6	yürürlüğe	_
+7	koydu	_
+8	.	_
+
+# text = Ressam tabloyu sergiledi. Ziyaretçiler onu çok beğendi.
+# columns = ID FORM COREF
+1	Ressam	(57)
+2	tabloyu	(58)
+3	sergiledi	_
+4	.	_
+5	Ziyaretçiler	(59)
+6	onu	(58)
+7	çok	_
+8	beğendi	_
+9	.	_
+
+# text = Pilot uçağı denetledi. Onu uçuşa hazırladı.
+# columns = ID FORM COREF
+1	Pilot	(60)
+2	uçağı	(61)
+3	denetledi	_
+4	.	_
+5	Onu	(61)
+6	uçuşa	_
+7	hazırladı	_
+8	.	_
+
+# text = Hasan yeni ev aldı. Onu kendi elleriyle dekore etti.
+# columns = ID FORM COREF
+1	Hasan	(62)
+2	yeni	_
+3	ev	(63)
+4	aldı	_
+5	.	_
+6	Onu	(63)
+7	kendi	_
+8	elleriyle	_
+9	dekore	_
+10	etti	_
+11	.	_
+
+# text = Şef yemeği tatlandı. Müşteriler onu övdü.
+# columns = ID FORM COREF
+1	Şef	(64)
+2	yemeği	(65)
+3	tattı	_
+4	.	_
+5	Müşteriler	(66)
+6	onu	(65)
+7	övdü	_
+8	.	_
+
+# text = Meryem şarkı söyledi. Herkes onu alkışladı.
+# columns = ID FORM COREF
+1	Meryem	(67)
+2	şarkı	(68)
+3	söyledi	_
+4	.	_
+5	Herkes	_
+6	onu	(67)
+7	alkışladı	_
+8	.	_
+
+# text = İşçiler binayı inşa etti. Mühendis onu denetledi.
+# columns = ID FORM COREF
+1	İşçiler	(69)
+2	binayı	(70)
+3	inşa	_
+4	etti	_
+5	.	_
+6	Mühendis	(71)
+7	onu	(70)
+8	denetledi	_
+9	.	_
+
+# text = Sekreter dosyayı taradı. Onu bilgisayara yükledi.
+# columns = ID FORM COREF
+1	Sekreter	(72)
+2	dosyayı	(73)
+3	taradı	_
+4	.	_
+5	Onu	(73)
+6	bilgisayara	_
+7	yükledi	_
+8	.	_
+
+# text = Tamirci motoru söktü. Onu tek tek temizledi.
+# columns = ID FORM COREF
+1	Tamirci	(74)
+2	motoru	(75)
+3	söktü	_
+4	.	_
+5	Onu	(75)
+6	tek	_
+7	tek	_
+8	temizledi	_
+9	.	_
+
+# text = Dişçi hastayı muayene etti. Ona diş çektirdi.
+# columns = ID FORM COREF
+1	Dişçi	(76)
+2	hastayı	(77)
+3	muayene	_
+4	etti	_
+5	.	_
+6	Ona	(77)
+7	diş	_
+8	çektirdi	_
+9	.	_
+
+# text = Avukat davayı kazandı. Müvekkili onu kutladı.
+# columns = ID FORM COREF
+1	Avukat	(78)
+2	davayı	(79)
+3	kazandı	_
+4	.	_
+5	Müvekkili	(80)
+6	onu	(78)
+7	kutladı	_
+8	.	_
+
+# text = Eczacı ilacı hazırladı. Onu hastaya verdi.
+# columns = ID FORM COREF
+1	Eczacı	(81)
+2	ilacı	(82)
+3	hazırladı	_
+4	.	_
+5	Onu	(82)
+6	hastaya	(83)
+7	verdi	_
+8	.	_
+
+# text = Öğrenciler kütüphaneye gitti. Onlar orada çalıştı.
+# columns = ID FORM COREF
+1	Öğrenciler	(84)
+2	kütüphaneye	(85)
+3	gitti	_
+4	.	_
+5	Onlar	(84)
+6	orada	_
+7	çalıştı	_
+8	.	_
+
+# text = Terzi elbiseyi dikti. Onu mankenin üzerine geçirdi.
+# columns = ID FORM COREF
+1	Terzi	(86)
+2	elbiseyi	(87)
+3	dikti	_
+4	.	_
+5	Onu	(87)
+6	mankenin	(88)
+7	üzerine	_
+8	geçirdi	_
+9	.	_
+
+# text = Balıkçı ağını denize attı. Onu sabah çekti.
+# columns = ID FORM COREF
+1	Balıkçı	(89)
+2	ağını	(90)
+3	denize	_
+4	attı	_
+5	.	_
+6	Onu	(90)
+7	sabah	_
+8	çekti	_
+9	.	_
+
+# text = Hemşire ilacı hazırladı. Onu hastaya uyguladı.
+# columns = ID FORM COREF
+1	Hemşire	(91)
+2	ilacı	(92)
+3	hazırladı	_
+4	.	_
+5	Onu	(92)
+6	hastaya	(93)
+7	uyguladı	_
+8	.	_
+
+# text = Sporcu maçı kazandı. Antrenörü onu tebrik etti.
+# columns = ID FORM COREF
+1	Sporcu	(94)
+2	maçı	(95)
+3	kazandı	_
+4	.	_
+5	Antrenörü	(96)
+6	onu	(94)
+7	tebrik	_
+8	etti	_
+9	.	_
+
+# text = Polis hırsızı yakaladı. Onu karakola götürdü.
+# columns = ID FORM COREF
+1	Polis	(97)
+2	hırsızı	(98)
+3	yakaladı	_
+4	.	_
+5	Onu	(98)
+6	karakola	_
+7	götürdü	_
+8	.	_
+
+# text = Aşçı malzemeleri hazırladı. Onları tencereye koydu.
+# columns = ID FORM COREF
+1	Aşçı	(99)
+2	malzemeleri	(100)
+3	hazırladı	_
+4	.	_
+5	Onları	(100)
+6	tencereye	_
+7	koydu	_
+8	.	_
+
+# text = Müzisyen parçayı besteledi. Onu konserde çaldı.
+# columns = ID FORM COREF
+1	Müzisyen	(101)
+2	parçayı	(102)
+3	besteledi	_
+4	.	_
+5	Onu	(102)
+6	konserde	_
+7	çaldı	_
+8	.	_
+
+# text = Bahçıvan çiçekleri suladı. Onları güneşe bıraktı.
+# columns = ID FORM COREF
+1	Bahçıvan	(103)
+2	çiçekleri	(104)
+3	suladı	_
+4	.	_
+5	Onları	(104)
+6	güneşe	_
+7	bıraktı	_
+8	.	_
+
+# text = Kaleci topu tuttu. Onu takım arkadaşına attı.
+# columns = ID FORM COREF
+1	Kaleci	(105)
+2	topu	(106)
+3	tuttu	_
+4	.	_
+5	Onu	(106)
+6	takım	_
+7	arkadaşına	(107)
+8	attı	_
+9	.	_
+
+# text = Dedektif ipucunu buldu. Onu dosyaya ekledi.
+# columns = ID FORM COREF
+1	Dedektif	(108)
+2	ipucunu	(109)
+3	buldu	_
+4	.	_
+5	Onu	(109)
+6	dosyaya	(110)
+7	ekledi	_
+8	.	_
+
+# text = Çevirmen metni okudu. Onu İngilizceye çevirdi.
+# columns = ID FORM COREF
+1	Çevirmen	(111)
+2	metni	(112)
+3	okudu	_
+4	.	_
+5	Onu	(112)
+6	İngilizceye	_
+7	çevirdi	_
+8	.	_
+
+# text = Fırıncı ekmeği pişirdi. Onu rafına dizdi.
+# columns = ID FORM COREF
+1	Fırıncı	(113)
+2	ekmeği	(114)
+3	pişirdi	_
+4	.	_
+5	Onu	(114)
+6	rafına	_
+7	dizdi	_
+8	.	_
+
+# text = Muhasebeci faturaları inceledi. Onları dosyaladı.
+# columns = ID FORM COREF
+1	Muhasebeci	(115)
+2	faturaları	(116)
+3	inceledi	_
+4	.	_
+5	Onları	(116)
+6	dosyaladı	_
+7	.	_
+
+# text = Veteriner köpeği muayene etti. Ona aşı yaptı.
+# columns = ID FORM COREF
+1	Veteriner	(117)
+2	köpeği	(118)
+3	muayene	_
+4	etti	_
+5	.	_
+6	Ona	(118)
+7	aşı	_
+8	yaptı	_
+9	.	_
+
+# text = Gazeteci haberi yazdı. Onu editöre gönderdi.
+# columns = ID FORM COREF
+1	Gazeteci	(119)
+2	haberi	(120)
+3	yazdı	_
+4	.	_
+5	Onu	(120)
+6	editöre	(121)
+7	gönderdi	_
+8	.	_
+
+# text = Boyacı duvarı boyadı. Onu iki kat sürdü.
+# columns = ID FORM COREF
+1	Boyacı	(122)
+2	duvarı	(123)
+3	boyadı	_
+4	.	_
+5	Onu	(123)
+6	iki	_
+7	kat	_
+8	sürdü	_
+9	.	_
+
+# text = Kaptan gemiyi limana yanaştırdı. Onu demirledi.
+# columns = ID FORM COREF
+1	Kaptan	(124)
+2	gemiyi	(125)
+3	limana	_
+4	yanaştırdı	_
+5	.	_
+6	Onu	(125)
+7	demirledi	_
+8	.	_
+
+# text = Bankacı hesabı inceledi. Müşteriye onu açıkladı.
+# columns = ID FORM COREF
+1	Bankacı	(126)
+2	hesabı	(127)
+3	inceledi	_
+4	.	_
+5	Müşteriye	(128)
+6	onu	(127)
+7	açıkladı	_
+8	.	_
+
+# text = Yönetmen filmi izledi. Onu tekrar kurguladı.
+# columns = ID FORM COREF
+1	Yönetmen	(129)
+2	filmi	(130)
+3	izledi	_
+4	.	_
+5	Onu	(130)
+6	tekrar	_
+7	kurguladı	_
+8	.	_
+
+# text = Kasap eti hazırladı. Onu vitrine koydu.
+# columns = ID FORM COREF
+1	Kasap	(131)
+2	eti	(132)
+3	hazırladı	_
+4	.	_
+5	Onu	(132)
+6	vitrine	_
+7	koydu	_
+8	.	_
+
+# text = Hâkim kararı açıkladı. Avukatlar onu not etti.
+# columns = ID FORM COREF
+1	Hâkim	(133)
+2	kararı	(134)
+3	açıkladı	_
+4	.	_
+5	Avukatlar	(135)
+6	onu	(134)
+7	not	_
+8	etti	_
+9	.	_
+
+# text = Mimari planı çizdi. Müteahhit onu uyguladı.
+# columns = ID FORM COREF
+1	Mimar	(136)
+2	planı	(137)
+3	çizdi	_
+4	.	_
+5	Müteahhit	(138)
+6	onu	(137)
+7	uyguladı	_
+8	.	_
+
+# text = Dansçı koreografiyi öğrendi. Onu sahnede sergiledi.
+# columns = ID FORM COREF
+1	Dansçı	(139)
+2	koreografiyi	(140)
+3	öğrendi	_
+4	.	_
+5	Onu	(140)
+6	sahnede	_
+7	sergiledi	_
+8	.	_
+
+# text = Teknisyen cihazı test etti. Onu rafa kaldırdı.
+# columns = ID FORM COREF
+1	Teknisyen	(141)
+2	cihazı	(142)
+3	test	_
+4	etti	_
+5	.	_
+6	Onu	(142)
+7	rafa	_
+8	kaldırdı	_
+9	.	_
+
+# text = Asistan randevuyu aldı. Onu doktora bildirdi.
+# columns = ID FORM COREF
+1	Asistan	(143)
+2	randevuyu	(144)
+3	aldı	_
+4	.	_
+5	Onu	(144)
+6	doktora	(145)
+7	bildirdi	_
+8	.	_
+
+# text = Kolcu bahçeyi gezdi. Onu korudu.
+# columns = ID FORM COREF
+1	Kolcu	(146)
+2	bahçeyi	(147)
+3	gezdi	_
+4	.	_
+5	Onu	(147)
+6	korudu	_
+7	.	_

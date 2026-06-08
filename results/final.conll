@@ -1,0 +1,206 @@
+1	Ahmet	B-1
+2	kitabı	B-2
+3	raftan	B-3
+4	aldı	B-4
+5	.	B-5
+6	O	I-1
+7	okumaya	I-1
+8	başladı	B-6
+9	.	B-7
+
+1	Kedi	B-1
+2	bahçede	B-2
+3	uyuyordu	B-3
+4	.	B-4
+5	Köpek	I-1
+6	onu	B-5
+7	gördü	B-6
+8	.	B-7
+
+1	Selin	B-1
+2	sınava	B-2
+3	çalıştı	B-3
+4	.	B-4
+5	O	I-1
+6	yüksek	B-5
+7	not	I-1
+8	aldı	B-6
+9	.	B-7
+
+1	Şoför	B-1
+2	bagajı	B-2
+3	açtı	B-3
+4	.	B-4
+5	Onu	I-1
+6	yolcuya	B-5
+7	verdi	B-6
+8	.	B-7
+
+1	Teyze	B-1
+2	mektubu	B-2
+3	yazdı	B-3
+4	.	B-4
+5	Onu	I-1
+6	postaneye	B-5
+7	götürdü	B-6
+8	.	B-7
+
+1	Çocuk	B-1
+2	oyuncağı	B-2
+3	kırdı	B-3
+4	.	B-4
+5	Annesi	I-1
+6	onu	B-5
+7	azarladı	B-6
+8	.	B-7
+
+1	Tarihçi	B-1
+2	belgeyi	B-2
+3	buldu	B-3
+4	.	B-4
+5	Onu	I-1
+6	müzeye	B-5
+7	teslim	B-6
+8	etti	B-7
+9	.	B-8
+
+1	Asker	B-1
+2	göreve	B-2
+3	gitti	B-3
+4	.	B-4
+5	O	I-1
+6	ülkesini	B-5
+7	korudu	I-1
+8	.	B-6
+
+1	Öğretmen	B-1
+2	derse	B-2
+3	hazırlandı	B-3
+4	.	B-4
+5	Öğrenciler	I-1
+6	onu	B-5
+7	sabırla	B-6
+8	dinledi	B-7
+9	.	B-8
+
+1	Kadın	B-1
+2	çantayı	B-2
+3	dükkâna	B-3
+4	bıraktı	B-4
+5	.	B-5
+6	Onu	I-1
+7	akşam	B-6
+8	aldı	B-7
+9	.	B-8
+
+1	Ressam	B-1
+2	fırçayı	B-2
+3	temizledi	B-3
+4	.	B-4
+5	Onu	I-1
+6	çantasına	B-5
+7	koydu	B-6
+8	.	B-7
+
+1	Doktor	B-1
+2	raporları	B-2
+3	inceledi	B-3
+4	.	B-4
+5	Onları	I-1
+6	hastaya	B-5
+7	gösterdi	B-6
+8	.	B-7
+
+1	Genç	B-1
+2	adam	B-2
+3	işe	B-3
+4	başladı	B-4
+5	.	B-5
+6	Müdürü	I-1
+7	onu	B-6
+8	tanıttı	B-7
+9	.	B-8
+
+1	Kuyumcu	B-1
+2	yüzüğü	B-2
+3	hazırladı	B-3
+4	.	B-4
+5	Müşteri	I-1
+6	onu	B-5
+7	beğendi	B-6
+8	.	B-7
+
+1	Hizmetçi	B-1
+2	odayı	B-2
+3	temizledi	B-3
+4	.	B-4
+5	Onu	I-1
+6	düzene	B-5
+7	soktu	B-6
+8	.	B-7
+
+1	Kahraman	B-1
+2	düşmanı	B-2
+3	yendi	B-3
+4	.	B-4
+5	Halk	I-1
+6	onu	B-5
+7	sevindi	B-6
+8	.	B-7
+
+1	Bilim	B-1
+2	insanı	B-2
+3	deneyi	B-3
+4	tamamladı	B-4
+5	.	B-5
+6	Onu	I-1
+7	raporuna	B-6
+8	yazdı	B-7
+9	.	B-8
+
+1	Ağabeyi	B-1
+2	hediyeyi	B-2
+3	gizledi	B-3
+4	.	B-4
+5	Kardeşi	I-1
+6	onu	B-5
+7	merak	B-6
+8	etti	B-7
+9	.	B-8
+
+1	Pilot	B-1
+2	uçuşu	B-2
+3	tamamladı	B-3
+4	.	B-4
+5	Yolcular	I-1
+6	onu	B-5
+7	alkışladı	B-6
+8	.	B-7
+
+1	Köylüler	B-1
+2	hasadı	B-2
+3	kaldırdı	B-3
+4	.	B-4
+5	Onlar	I-1
+6	pazara	B-5
+7	götürdü	B-6
+8	.	B-7
+
+1	Öğrenci	B-1
+2	projeyi	B-2
+3	bitirdi	B-3
+4	.	B-4
+5	Hocası	I-1
+6	onu	B-5
+7	övdü	B-6
+8	.	B-7
+
+1	Marangoz	B-1
+2	tahtayı	B-2
+3	kesti	B-3
+4	.	B-4
+5	Onu	I-1
+6	çerçeve	B-5
+7	yaptı	B-6
+8	.	B-7
+
