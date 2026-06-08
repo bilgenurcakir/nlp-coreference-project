@@ -1,6 +1,4 @@
-Aşağıda raporu **makale formatına yakın, akademik üslupta, daha resmi ve detaylı** şekilde yeniden yazdım. Direkt Word/PDF’e koyabilirsin.
 
----
 
 # 📄 Türkçe Metinlerde İstatistiksel Makine Öğrenmesi ile Coreference Resolution
 
