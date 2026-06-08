@@ -1,214 +1,199 @@
 
 
-# 📄 Turkish Coreference Resolution System  
-## Statistical Machine Learning Based NLP Project
+# 📄 Türkçe Coreference Resolution Sistemi
 
+## İstatistiksel Makine Öğrenmesi Tabanlı NLP Projesi
 
+---
 
-## 🧠 Project Overview
+## 🧠 Proje Genel Bakış
 
-This project aims to perform **coreference resolution in Turkish text** using a **statistical machine learning approach**.  
+Bu proje, Türkçe metinlerde **coreference resolution (gönderim çözümleme)** işlemini **istatistiksel makine öğrenmesi yaklaşımıyla** gerçekleştirmeyi amaçlamaktadır.
 
-Coreference resolution is the task of identifying when different words or expressions in a text refer to the same entity.
+Coreference resolution, bir metinde farklı kelime veya ifadelerin aynı varlığa referans verip vermediğini belirleme görevidir.
 
-Example:
+Örnek:
 
 > Ahmet kitabı aldı. O okumaya başladı.
 
-Here, **“O” → “Ahmet”**
+Burada **“O” → “Ahmet”** anlamına gelir.
 
 ---
 
-## 🎯 Objective
+## 🎯 Amaç
 
-The main objectives of this project are:
+Bu projenin temel amaçları şunlardır:
 
-- Detect coreference relations between words in Turkish sentences  
-- Represent data in **CoNLL format**  
-- Train a statistical machine learning model  
-- Evaluate performance using standard NLP metrics  
-- Generate BIO-tagged output and cluster-based entity chains  
+* Türkçe metinlerde coreference ilişkilerini tespit etmek
+* Veriyi **CoNLL formatında temsil etmek**
+* İstatistiksel bir makine öğrenmesi modeli eğitmek
+* Performansı standart NLP metrikleri ile değerlendirmek
+* BIO etiketli çıktı ve küme tabanlı varlık zincirleri üretmek
 
 ---
 
-## 📂 Dataset Format (CoNLL)
+## 📂 Veri Seti Formatı (CoNLL)
 
-The dataset is formatted in **CoNLL style annotation**:
+Veri seti **CoNLL formatında** etiketlenmiştir:
 
+```
+token_id   kelime   etiket
+```
 
+Örnek:
 
-token_id   word   label
-
-
-
-Example:
-
-
-
+```
 1   Ahmet   B-1
 2   kitabı  I-1
 3   raftan  O
+```
 
+### Etiket Açıklaması:
 
-
-### Label Description:
-- **B-X** → Beginning of a coreference cluster  
-- **I-X** → Inside a coreference cluster  
-- **O** → No coreference relation  
-
----
-
-## ⚙️ System Pipeline
-
-The system consists of the following steps:
-
-### 1. Data Loading
-- Reads CoNLL formatted files
-- Splits documents into token sequences
-
-### 2. Feature Extraction
-For each pair of words:
-
-- Case-insensitive equality
-- Capitalization similarity
-- Substring similarity
-
-### 3. Pairwise Classification
-Each word pair is classified as:
-
-- `1` → Coreference exists  
-- `0` → No coreference  
-
-### 4. Model Training
-- Logistic Regression classifier
-- Class imbalance handled using `class_weight="balanced"`
-
-### 5. Clustering
-- Union-Find algorithm
-- Groups words into coreference chains
-
-### 6. BIO Tagging
-- Converts clusters into CoNLL BIO format
+* **B-X** → Coreference kümesinin başlangıcı
+* **I-X** → Coreference kümesinin içi
+* **O** → Coreference ilişkisi yok
 
 ---
 
-## 🤖 Machine Learning Model
+## ⚙️ Sistem Pipeline (İş Akışı)
 
-- Algorithm: **Logistic Regression**
-- Library: `scikit-learn`
-- max_iter: 1000
-- class_weight: balanced
+Sistem aşağıdaki adımlardan oluşur:
 
----
+### 1. Veri Yükleme
 
-## 📊 Evaluation Metrics
+* CoNLL formatındaki dosyaları okur
+* Dokümanları token dizilerine böler
 
-The model is evaluated using:
+### 2. Özellik Çıkarımı
 
-- Accuracy  
-- Precision  
-- Recall  
-- F1-score  
-- Confusion Matrix  
+Her kelime çifti için:
+
+* Küçük/büyük harf eşitliği
+* Büyük harf benzerliği
+* Alt string (substring) benzerliği
 
 ---
 
-## 📉 Results
+### 3. Çift Bazlı Sınıflandırma
 
-### 🔹 Numerical Results
+Her kelime çifti şu şekilde sınıflandırılır:
 
+* `1` → Coreference ilişkisi var
+* `0` → Coreference yok
 
+---
 
+### 4. Model Eğitimi
+
+* Logistic Regression sınıflandırıcı kullanılır
+* `class_weight="balanced"` ile dengesizlik giderilir
+
+---
+
+### 5. Kümeleme (Clustering)
+
+* Union-Find algoritması kullanılır
+* Kelimeler coreference zincirlerine gruplanır
+
+---
+
+### 6. BIO Etiketleme
+
+* Küme yapısı CoNLL BIO formatına dönüştürülür
+
+---
+
+## 🤖 Makine Öğrenmesi Modeli
+
+* Algoritma: **Logistic Regression**
+* Kütüphane: `scikit-learn`
+* max_iter: 1000
+* class_weight: balanced
+
+---
+
+## 📊 Değerlendirme Metrikleri
+
+Model şu metriklerle değerlendirilir:
+
+* Accuracy (Doğruluk)
+* Precision (Kesinlik)
+* Recall (Duyarlılık)
+* F1-score
+* Confusion Matrix
+
+---
+
+## 📉 Sonuçlar
+
+### 🔹 Sayısal Sonuçlar
+
+```
 Accuracy: 0.94
 Precision: 0.16
 Recall: 0.18
 F1-score: 0.17
-
-
-
-
-
-### 📊 Confusion Matrix
-
-📌 Insert image below after running project:
-
-```md
-![Confusion Matrix](results/confusion_matrix.png)
-
-
----
-
-### 📈 Metrics Visualization
-
-📌 Insert metric chart:
-
-```md
-![Evaluation Metrics](results/metrics.png)
-
-
-
-## 📌 Interpretation of Results
-
-Although the system achieves **high accuracy (~0.94)**, performance on the **coreference class (minority class)** is low.
-
-### Why?
-
-### ⚠️ 1. Class Imbalance
-
-* Non-coreference (0): ~658 samples
-* Coreference (1): ~22 samples
-
-➡ Model biased toward majority class
-
----
-
-### ⚠️ 2. Limited Feature Representation
-
-Current features are:
-
-* Surface-level matching
-* No semantic embeddings
-* No contextual understanding
-
----
-
-### ⚠️ 3. Model Limitation
-
-* Logistic Regression is linear
-* Cannot capture deep semantic relations
-
----
-
-## 📌 Output Format
-
-The system generates CoNLL output:
-
-
-
-results/final.conll
-
-
-
-Example:
-
 ```
 
+
+## 📌 Sonuçların Yorumu
+
+Sistem **yüksek accuracy (~0.94)** değerine ulaşmasına rağmen, **coreference sınıfındaki performans düşüktür**.
+
+### Neden?
+
+---
+
+### ⚠️ 1. Sınıf Dengesizliği
+
+* Coreference olmayan (0): ~658 örnek
+* Coreference olan (1): ~22 örnek
+
+➡ Model çoğunluk sınıfa eğilimlidir
+
+---
+
+### ⚠️ 2. Sınırlı Özellik Temsili
+
+Kullanılan özellikler:
+
+* Yüzeysel eşleşmeler
+* Semantik embedding yok
+* Bağlamsal anlam bilgisi yok
+
+---
+
+### ⚠️ 3. Model Sınırlılığı
+
+* Logistic Regression lineer bir modeldir
+* Derin anlamsal ilişkileri yakalayamaz
+
+---
+
+## 📌 Çıktı Formatı
+
+Sistem CoNLL formatında çıktı üretir:
+
+```
+results/final.conll
+```
+
+Örnek:
+
+```
 1   Ahmet   B-1
 2   kitabı  I-1
 6   O       I-1
-
-
+```
 
 ---
 
-## 📁 Project Structure
+## 📁 Proje Yapısı
 
 ```
-
 src/
 │── main.py
-│── utils.py
-│── model.py
 
 data/
 │── train.conll
@@ -218,12 +203,11 @@ results/
 │── final.conll
 │── confusion_matrix.png
 │── metrics.png
-
 ```
 
 ---
 
-## 🚀 How to Run
+## 🚀 Çalıştırma
 
 ```bash
 python src/main.py
@@ -231,46 +215,46 @@ python src/main.py
 
 ---
 
-## 📌 Limitations
+## 📌 Sınırlamalar
 
-* Dataset is highly imbalanced
-* No semantic embeddings (e.g., BERT)
-* Pairwise model ignores global context
-* Rule-based clustering simplicity
-
----
-
-## 🔮 Future Work
-
-* 🔥 BERT / Sentence Transformer embeddings
-* 🧠 CRF-based sequence labeling
-* 📊 Data augmentation for minority class
-* 🌐 Span-based neural coreference models
-* 📈 Graph-based clustering methods
+* Veri seti oldukça dengesiz
+* Semantik embedding yok (örn. BERT)
+* Pairwise model global bağlamı dikkate almıyor
+* Kümeleme yaklaşımı basit
 
 ---
 
-## 🧾 Conclusion
+## 🔮 Gelecek Çalışmalar
 
-This project presents a **baseline statistical coreference resolution system for Turkish text**.
-
-While the system is fully functional and produces valid CoNLL outputs, its performance is limited due to:
-
-* Data imbalance
-* Lack of semantic features
-* Linear model constraints
-
-Despite these limitations, the system successfully demonstrates an end-to-end NLP pipeline.
+* 🔥 BERT / Sentence Transformer embeddingleri
+* 🧠 CRF tabanlı sequence labeling
+* 📊 Azınlık sınıf için veri artırma
+* 🌐 Span tabanlı neural coreference modelleri
+* 📈 Graph tabanlı kümeleme yöntemleri
 
 ---
 
-## 📷 Figures (Auto Generated)
+## 🧾 Sonuç
+
+Bu proje, Türkçe metinler için **temel bir istatistiksel coreference resolution sistemi** sunmaktadır.
+
+Sistem uçtan uca çalışsa da performans şu nedenlerle sınırlıdır:
+
+* Veri dengesizliği
+* Semantik özellik eksikliği
+* Lineer model kullanımı
+
+Buna rağmen sistem, tam bir NLP pipeline’ını başarıyla göstermektedir.
+
+---
+
+## 📷 Görseller (Otomatik Üretilen)
 
 ### Confusion Matrix
 
 ![Confusion Matrix](results/confusion_matrix.png)
 
-### Evaluation Metrics
+### Değerlendirme Metrikleri
 
-![Metrics](results/metrics.png)
+![Metrikler](results/metrics.png)
 
