@@ -3,7 +3,7 @@
 # 📄 Türkçe Coreference Resolution Sistemi
 
 ## İstatistiksel Makine Öğrenmesi Tabanlı NLP Projesi
-
+### Tuğba Nur Ayık -- Bilgenur Çakır
 ---
 
 ## 🧠 Proje Genel Bakış
